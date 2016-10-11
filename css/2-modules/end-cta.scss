@@ -1,0 +1,20 @@
+.cta {
+  background-color: $lt-grey-2;
+  background-image: $bkg-img;
+  background-size: cover;
+  background-position: center;
+
+  .ctaContainer {
+    @include outer-container;
+
+    .ctaContainer-content {
+      @include span-columns(12);
+      text-align: center;
+
+      @include breakpoint($bp-m) {
+        @include span-columns(6);
+        @include shift(3);
+      }
+    }
+  }
+}

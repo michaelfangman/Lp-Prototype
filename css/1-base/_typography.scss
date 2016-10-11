@@ -1,0 +1,117 @@
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
+  -webkit-font-smoothing: antialiased;
+  color: $base-font-color;
+  font-family: $base-font;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $base-font;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  //margin: 0 0 $small-spacing;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  color: $dk-grey-1;
+}
+
+p {
+  //margin: 0 0 $small-spacing;
+}
+
+a {
+  //color: $action-color;
+  text-decoration: none;
+  transition: color 0.1s linear;
+
+  &:active,
+  &:focus,
+  &:hover {
+    //color: darken($action-color, 15%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+hr {
+  //border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  //margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+h1 {
+  font-size: rem(30);
+  margin: 0;
+
+  @include breakpoint($bp-m) {
+    font-size: rem(54);
+  }
+}
+
+h2 {
+  font-size: rem(42);
+  margin: 0;
+}
+
+h3 {
+  font-size: rem(30);
+  margin: 0;
+}
+
+h4 {
+  font-size: rem(21);
+  margin: 0;
+}
+
+h5 {
+  font: {
+    size: rem(15);
+    weight: 500;
+  }
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  margin-top: 0;
+}
+
+h6 {
+  font: {
+    size: rem(12);
+    weight: 500;
+  }
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+
+  margin-top: 0;
+  margin-bottom: rem(18);
+}
+
+span.timer-count {
+  font-size: rem(90);
+  font-weight: 700;
+  color: $dk-grey-1;
+}
+
+

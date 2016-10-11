@@ -1,0 +1,11 @@
+.sectionContainer {
+	padding: rem(60) rem(30);
+
+	@include breakpoint($bp-m) {
+		padding: rem(90) rem(30);
+	}
+
+	@include breakpoint($bp-l) {
+		padding: rem(120) rem(30);
+	}
+}

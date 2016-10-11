@@ -1,0 +1,29 @@
+.countdown {
+  background-color: $white;
+
+  .countdownContainer {
+    @include outer-container;
+
+    h3 {
+      text-align: center;
+    }
+
+    .countdownContainer-content {
+      @include span-columns(12);
+      text-align: center;
+
+      h5 {
+        color: $dk-grey-1;
+      }
+
+      @include breakpoint($bp-s) {
+        @include span-columns(6);
+        @include omega;
+      }
+
+      @include breakpoint($bp-l) {
+        @include span-columns(3);
+      }
+    }
+  }
+}

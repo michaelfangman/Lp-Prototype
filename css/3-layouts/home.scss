@@ -1,0 +1,16 @@
+.boxes {
+	@include outer-container;
+}
+
+.box {
+	@include box-sizing(border-box);
+	@include size(rem(60));
+	background-color: #000;
+	float: left;
+	@include span-columns(3);
+
+	&:nth-of-type(even) {
+		background-color: tint(#000, 20%);
+	}
+}
+

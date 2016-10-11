@@ -1,0 +1,51 @@
+.details {
+  background-color: $white;
+
+  .detailsContainer {
+    @include outer-container;
+
+    h3 {
+      text-align: center;
+    }
+
+    .detailsContainer-content {
+      @include span-columns(12);
+
+      text-align: center;
+
+      &:before {
+        content: '';
+        display: block;
+        height: rem(30);
+        width: rem(30);
+        margin: rem(30) auto;
+
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &.iconTrophy {
+        &:before {
+          background-image: url('../img/icons/Trophy.png');
+        }
+      }
+
+      &.iconGlobe {
+        &:before {
+          background-image: url('../img/icons/Globe.png');
+        }
+      }
+
+      &.iconHands {
+        &:before {
+          background-image: url('../img/icons/Hands.png');
+        }
+      }
+
+      @include breakpoint($bp-m) {
+        @include span-columns(4);
+      }
+    }
+  }
+}

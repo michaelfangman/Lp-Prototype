@@ -1,0 +1,32 @@
+.footer {
+  background-color: $white;
+  padding-left: rem(30);
+  padding-right: rem(30);
+
+  .footerContainer {
+    @include outer-container;
+
+    .footerContainer-content {
+      @include span-columns(12);
+
+      p {
+        font-size: rem(15);
+        display: block;
+        text-align: center;
+
+        @include breakpoint($bp-m) {
+          display: inline-block;
+
+          &:last-of-type {
+            float: right;
+          }
+        }
+      }
+
+      // @include breakpoint($bp-m) {
+      //   @include span-columns(6);
+      //   @include shift(3);
+      // }
+    }
+  }
+}

@@ -264,7 +264,8 @@ h4 {
 
 a {
   text-decoration: none;
-  transition: color 0.1s linear; }
+  transition: color 0.1s linear;
+  color: red; }
   a:active, a:focus {
     outline: none; }
 

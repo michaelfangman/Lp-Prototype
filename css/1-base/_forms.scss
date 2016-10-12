@@ -1,9 +1,4 @@
-fieldset {
- // background-color: lighten($base-border-color, 10%);
-  //border: $base-border;
-  //margin: 0 0 $small-spacing;
-  //padding: $base-spacing;
-}
+fieldset {}
 
 input,
 label,
@@ -15,7 +10,6 @@ select {
 
 label {
   font-weight: 600;
-  //margin-bottom: $small-spacing / 2;
 
   &.required::after {
     content: "*";
@@ -40,15 +34,10 @@ textarea {
   font-size: rem(15);
 
   width: 100%;
-
-
-  &:hover {
-    //border-color: darken($base-border-color, 10%);
-  }
+  @include transition($tr-s);
 
   &:focus {
-    //border-color: $action-color;
-    //box-shadow: $form-box-shadow-focus;
+    background-color: $lt-grey-1;
     outline: none;
   }
 }
@@ -64,16 +53,13 @@ input[type="search"] {
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
-  //margin-right: $small-spacing / 2;
 }
 
 input[type="file"] {
-  //padding-bottom: $small-spacing;
   width: 100%;
 }
 
 select {
-  //margin-bottom: $base-spacing;
   max-width: 100%;
   width: auto;
 }

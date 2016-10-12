@@ -8,6 +8,7 @@ $(function() {
   });
 });
 
+// Hide Modal on Overlay Click
 $(function() {                      
   $(".modalOverlay").click(function() {
     $(".modal").removeClass("showModal");

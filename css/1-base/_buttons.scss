@@ -36,8 +36,6 @@
     background-color: shade($dk-grey-1, 10%);
     @include transform(scale(1.02));
     @include transition($tr-m);
-
-    box-shadow: 0 2px 9px rgba(0,0,0,.25);
   }
 
   &:disabled {

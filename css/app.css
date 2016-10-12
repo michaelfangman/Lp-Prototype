@@ -199,8 +199,7 @@ body.noScroll {
     transform: scale(1.02);
     -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.25); }
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .btn:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
@@ -209,7 +208,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica" sans-serif;
   font-size: 1.125rem; }
 
 label {
@@ -227,12 +226,16 @@ textarea {
   box-sizing: border-box;
   padding: 0.9375rem 1.5rem;
   border: 0.0625rem solid #666;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica" sans-serif;
   font-size: 0.9375rem;
-  width: 100%; }
+  width: 100%;
+  -webkit-transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus,
   select[multiple=multiple]:focus,
   textarea:focus {
+    background-color: #f8f8f8;
     outline: none; }
 
 textarea {
@@ -263,7 +266,7 @@ body {
   font-feature-settings: "kern", "liga", "pnum";
   -webkit-font-smoothing: antialiased;
   color: #666;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica" sans-serif;
   font-size: 1.125rem;
   line-height: 1.5; }
 
@@ -273,7 +276,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", "Helvetica" sans-serif;
   font-size: 1.125rem;
   line-height: 1; }
 
@@ -291,13 +294,10 @@ a {
   text-decoration: none;
   transition: color 0.1s linear;
   color: #333; }
+  a:active, a:focus, a:hover {
+    color: #0d0d0d; }
   a:active, a:focus {
     outline: none; }
-
-hr {
-  border-left: none;
-  border-right: none;
-  border-top: none; }
 
 img,
 picture {
@@ -510,7 +510,7 @@ span.timer-count {
             margin-right: 0; } }
 
 .host {
-  background-color: #f5f5f5;
+  background-color: #f8f8f8;
   overflow: hidden;
   position: relative;
   padding-bottom: 0; }
@@ -743,6 +743,10 @@ span.timer-count {
   .modal .modalContainer {
     background-color: #fff;
     position: absolute;
+    top: 0rem;
+    right: 0rem;
+    bottom: 0rem;
+    left: 0rem;
     z-index: 1001;
     visibility: hidden;
     -webkit-transform: translateY(-100%);
@@ -753,23 +757,21 @@ span.timer-count {
     -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    top: 0rem;
-    bottom: 0rem;
-    left: 0rem;
-    right: 0rem;
     height: auto; }
     @media screen and (min-width: 25.0625rem) {
       .modal .modalContainer {
+        position: absolute;
         top: 1.875rem;
+        right: 1.875rem;
         bottom: 1.875rem;
-        left: 1.875rem;
-        right: 1.875rem; } }
+        left: 1.875rem; } }
     @media screen and (min-width: 48.0625rem) {
       .modal .modalContainer {
+        position: absolute;
         top: 3.75rem;
+        right: 3.75rem;
         bottom: 3.75rem;
-        left: 3.75rem;
-        right: 3.75rem; } }
+        left: 3.75rem; } }
     .modal .modalContainer.showModal {
       visibility: visible;
       -webkit-transform: translateY(0%);
@@ -965,29 +967,3 @@ span.timer-count {
     opacity: 1;
     visibility: visible;
     cursor: pointer; }
-
-.boxes {
-  max-width: 80rem;
-  margin-left: auto;
-  margin-right: auto; }
-  .boxes::after {
-    clear: both;
-    content: "";
-    display: table; }
-
-.box {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  height: 3.75rem;
-  width: 3.75rem;
-  background-color: #000;
-  float: left;
-  float: left;
-  display: block;
-  margin-right: 2.3576515979%;
-  width: 23.2317613015%; }
-  .box:last-child {
-    margin-right: 0; }
-  .box:nth-of-type(even) {
-    background-color: #333333; }

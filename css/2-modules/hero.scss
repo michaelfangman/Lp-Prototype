@@ -12,10 +12,6 @@
     .heroContainer-content {
       @include span-columns(12);
 
-      @include breakpoint($bp-s) {
-        //@include span-columns(10);
-      }
-
       @include breakpoint($bp-m) {
         @include span-columns(8);
       }

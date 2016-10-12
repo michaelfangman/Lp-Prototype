@@ -6,12 +6,22 @@
 
   .heroContainer {
     @include outer-container;
+    padding-top: rem(30);
+    padding-bottom: rem(30);
 
     .heroContainer-content {
       @include span-columns(12);
 
+      @include breakpoint($bp-s) {
+        //@include span-columns(10);
+      }
+
+      @include breakpoint($bp-m) {
+        @include span-columns(8);
+      }
+
       @include breakpoint($bp-l) {
-        @include span-columns(6);
+        @include span-columns(7);
       }
 
       @include breakpoint($bp-xl) {
@@ -99,11 +109,13 @@
         font-size: rem(15);
         font-style: italic;
         font-weight: 700;
+        text-align: center;
 
-        @include breakpoint($bp-xs) {
+        @include breakpoint($bp-s) {
           display: inline-block;
           margin-top: 0;
           margin-left: rem(12);
+          text-align: left;
         }
       }
     }

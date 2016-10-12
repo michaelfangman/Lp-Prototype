@@ -6,6 +6,11 @@
 
     h3 {
       text-align: center;
+      margin-bottom: rem(24);
+
+      @include breakpoint($bp-m) {
+        margin-bottom: rem(30);
+      }
     }
 
     .detailsContainer-content {
@@ -18,7 +23,7 @@
         display: block;
         height: rem(30);
         width: rem(30);
-        margin: rem(30) auto;
+        margin: rem(36) auto rem(30);
 
         background-size: 100% auto;
         background-repeat: no-repeat;

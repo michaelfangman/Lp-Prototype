@@ -1,5 +1,10 @@
+body {
+	&.noScroll {
+		overflow-y: hidden;
+	}
+}
 .sectionContainer {
-	padding: rem(60) rem(30);
+	padding: rem(90) rem(30);
 
 	@include breakpoint($bp-m) {
 		padding: rem(90) rem(30);

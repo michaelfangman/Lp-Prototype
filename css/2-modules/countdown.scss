@@ -6,19 +6,16 @@
 
     h3 {
       text-align: center;
+      margin-bottom: rem(36);
     }
 
     .countdownContainer-content {
-      @include span-columns(12);
+      @include span-columns(6);
+      @include omega;
       text-align: center;
 
       h5 {
         color: $dk-grey-1;
-      }
-
-      @include breakpoint($bp-s) {
-        @include span-columns(6);
-        @include omega;
       }
 
       @include breakpoint($bp-l) {

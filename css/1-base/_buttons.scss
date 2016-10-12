@@ -2,8 +2,9 @@
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
 
-  display: inline-block;
+  display: block;
   padding: rem(18) rem(42);
+  width: 100%;
 
   background-color: $dk-grey-1;
   border-radius: rem(30);
@@ -21,10 +22,22 @@
   user-select: none;
   white-space: nowrap;
 
+  @include transition($tr-s);
+
+  @include breakpoint($bp-s) {
+    display: inline-block;
+    width: auto;
+  }
+
   &:hover,
   &:focus {
-    //background-color: darken($action-color, 15%);
-    color: #fff;
+    outline: none;
+
+    background-color: shade($dk-grey-1, 10%);
+    @include transform(scale(1.02));
+    @include transition($tr-m);
+
+    box-shadow: 0 2px 9px rgba(0,0,0,.25);
   }
 
   &:disabled {

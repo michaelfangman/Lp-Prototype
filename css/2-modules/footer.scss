@@ -14,8 +14,16 @@
         display: block;
         text-align: center;
 
+        &:first-of-type {
+          margin-bottom: 0;
+        }
+        &:last-of-type {
+          margin-top: 0;
+        }
+
         @include breakpoint($bp-m) {
           display: inline-block;
+          margin: rem(18) 0 !important;
 
           &:last-of-type {
             float: right;

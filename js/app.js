@@ -1,14 +1,18 @@
-$(document).ready(function() {
-  var menuToggle = $('#js-mobile-menu').unbind();
-  $('#js-navigation-menu').removeClass("show");
-
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    $('#js-navigation-menu').slideToggle(function(){
-      if($('#js-navigation-menu').is(':hidden')) {
-        $('#js-navigation-menu').removeAttr('style');
-      }
-    });
+// Modal Toggle
+$(function() {                      
+  $("button").click(function() {
+    $(".modal").toggleClass("showModal");
+    $(".modalContainer").toggleClass("showModal");
+    $(".modalOverlay").toggleClass("showOverlay");
+    $("body").toggleClass("noScroll");
   });
 });
 
+$(function() {                      
+  $(".modalOverlay").click(function() {
+    $(".modal").removeClass("showModal");
+    $(".modalContainer").removeClass("showModal");
+    $(".modalOverlay").removeClass("showOverlay");
+    $("body").removeClass("noScroll");
+  });
+});

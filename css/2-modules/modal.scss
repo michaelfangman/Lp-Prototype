@@ -1,0 +1,231 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: scroll;
+  z-index: 1000;
+
+  visibility: hidden;
+
+  &.showModal {
+    visibility: visible;
+  }
+
+  .modalContainer {
+    background-color: $white;
+    position: absolute;
+    z-index: 1001;
+
+    visibility: hidden;
+    @include transform(translateY(-100%));
+    @include transition($tr-m);
+
+    top: $modal-padding-s;
+    bottom: $modal-padding-s;
+    left: $modal-padding-s;
+    right: $modal-padding-s;
+    height: auto;
+
+    //min-height: rem(600);
+
+    @include breakpoint($bp-xs) {
+      top: $modal-padding-m;
+      bottom: $modal-padding-m;
+      left: $modal-padding-m;
+      right: $modal-padding-m;
+    }
+
+    @include breakpoint($bp-m) {
+      top: $modal-padding-l;
+      bottom: $modal-padding-l;
+      left: $modal-padding-l;
+      right: $modal-padding-l;
+    }
+
+    &.showModal {
+      visibility: visible;
+      @include transform(translateY(0%));
+    }
+
+    .close {
+      position: absolute;
+      z-index: 1000;
+      top: rem(15);
+      right: rem(15);
+      
+      height: rem(30);
+      width: rem(30);
+      padding: 0;
+      margin: 0;
+
+      background: none;
+      border: none;
+
+      text-indent: rem(-9999px);
+
+      @include breakpoint($bp-m) {
+        top: rem(30);
+        right: rem(30);
+      }
+
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+
+        height: rem(30);
+        width: rem(2);
+        background-color: $dk-grey-1;
+      }
+
+      &:before {
+        @include transform(rotate(45deg));
+      }
+
+      &:after {
+        @include transform(rotate(-45deg));
+      }
+
+      &:hover {
+        @include transform(rotate(180deg));
+        @include transition($tr-m);
+      }
+    }
+    .modalContainer-contentLeft {
+      background-color: $lt-grey-2;
+      background-image: $bkg-img;
+      background-size: cover;
+      background-position: center;
+
+      position: absolute;
+      top: 0;
+      bottom: 50%;
+      left: 0;
+      right: 0;
+
+      height: auto;
+      width: 100%;
+
+      @include breakpoint($bp-l) {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: 0;
+
+        height: 100%;
+        min-height: rem(400);
+        width: auto;
+      }
+    }
+
+    .modalContainer-contentRight {
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      height: auto;
+      width: 100%;
+
+      min-height: rem(400);
+      margin-bottom: $modal-padding-s;
+
+      background: $white;
+
+      @include breakpoint($bp-xs) {
+        margin-bottom: $modal-padding-m;
+      }
+
+      @include breakpoint($bp-m) {
+        margin-bottom: $modal-padding-l;
+      }
+
+      @include breakpoint($bp-l) {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 50%;
+
+        height: 100%;
+        width: auto;
+      }
+
+      .modalContainer-contentRight-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translateY(-50%)translateX(-50%));
+
+        width: 100%;
+        max-width: rem(600);
+        //max-height: rem(600);
+        padding: rem(30);
+        margin: 0 auto 0;
+
+        //background-color: $white;
+
+        input {
+          @include span-columns(12);
+          margin-top: rem(24);
+
+          @include breakpoint($bp-m) {
+            @include span-columns(8);
+          }
+
+          @include breakpoint($bp-l) {
+            @include span-columns(7);
+          }
+
+          @include breakpoint($bp-xl) {
+            @include span-columns(8);
+          }
+        }
+
+        button.btn {
+          @include span-columns(12);
+          margin-top: rem(18);
+
+          @include breakpoint($bp-m) {
+            @include span-columns(4);
+            margin-top: rem(24);
+          }
+
+          @include breakpoint($bp-l) {
+            @include span-columns(5);
+          }
+
+          @include breakpoint($bp-xl) {
+            @include span-columns(4);
+          }
+        }
+      }
+    }
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: rgba(0,0,0,.5);
+
+  visibility: hidden;
+  opacity: 0;
+  @include transition($tr-m);
+
+  &.showOverlay {
+    opacity: 1;
+    visibility: visible;
+    cursor: pointer;
+  }
+}

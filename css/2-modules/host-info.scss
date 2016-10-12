@@ -1,6 +1,13 @@
 .host {
   background-color: $lt-grey-1;
   overflow: hidden;
+  position: relative;
+
+  padding-bottom: 0;
+
+  @include breakpoint($bp-m) {
+    padding-bottom: rem(90);
+  }
 
   .hostContainer {
     @include outer-container;
@@ -13,11 +20,36 @@
       @include span-columns(12);
 
       display: block;
-      max-height: rem(400);
+      // position: absolute;
+      // bottom: 0;
+
+      max-height: rem(300);
       text-align: center;
+      margin-top: rem(30);
+
+      @include breakpoint($bp-m) {
+        margin-top: 0;
+        max-height: rem(475);
+      }
+
+      // @include breakpoint($bp-l) {
+      //   max-height: rem(425);
+      // }
 
       img {
-        height: rem(400);
+        height: rem(300);
+        display: block;
+        margin: 0 auto;
+
+        @include breakpoint($bp-m) {
+          height: rem(475);
+          margin: -5% auto 0;
+        }
+
+        @include breakpoint($bp-l) {
+          //height: rem(425);
+          margin: -10% auto 0;
+        }
       }
 
       @include breakpoint($bp-m) {
@@ -34,6 +66,15 @@
       }
 
       @include breakpoint($bp-m) {
+        @include span-columns(6);
+      }
+
+      @include breakpoint($bp-l) {
+        @include span-columns(5);
+        @include shift(1);
+      }
+
+      @include breakpoint($bp-xl) {
         @include span-columns(4);
         @include shift(2);
       }
@@ -42,10 +83,10 @@
         margin-top: rem(30);
         a {
           display: inline-block;
-          height: rem(18);
-          width: rem(18);
+          height: rem(24);
+          width: rem(24);
           text-indent: rem(-9999);
-          margin-right: rem(9);
+          margin-right: rem(12);
 
           background-size: 100% auto;
           background-repeat: no-repeat;

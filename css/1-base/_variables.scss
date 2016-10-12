@@ -20,6 +20,10 @@ $base-border-radius: 3px;
 // $medium-gray: #999;
 // $light-gray: #ddd;
 
+$modal-padding-s: rem(0);
+$modal-padding-m: rem(30);
+$modal-padding-l: rem(60);
+
 $white: #fff;
 $lt-grey-1: #f5f5f5;
 $lt-grey-2: #eee;
@@ -35,9 +39,9 @@ $headline-font-color: $dk-grey-1;
 $bkg-img: url('../img/bkg-img.png');
 
 // Transitions
-$tr-s: .25s;
-$tr-m: .5s;
-$tr-l: 1s;
+$tr-s: all .25s $ease-in-out-back;
+$tr-m: all .5s $ease-in-out-back;
+$tr-l: all .75s $ease-in-out-back;
 
 // Border
 //$base-border-color: $light-gray;
